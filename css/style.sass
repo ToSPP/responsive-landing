@@ -1,8 +1,531 @@
 @import "vars"
+@import "mixins"
 
 html
-  font-size: #{$font-size}/#{$line-height}
   font-family: $font-family
-  color: $primary-color
+  font-size: $font-size
   font-weight: $font-weight
+  line-height: $line-height
+  color: $primary-color
 
+body
+  width: 100%
+  display: flex
+  -webkit-flex-direction: column
+  -ms-flex-direction: column
+  flex-direction: column
+
+.container
+  width: 280px
+  margin-left: auto
+  margin-right: auto
+  padding-left: 20px
+  padding-right: 20px
+
+@media screen and (min-height: 320px)
+  .container
+    width: 724px
+    padding-left: 22px
+    padding-right: 22px
+
+@media screen and (min-height: 768px)
+  .container
+    width: 940px
+
+@media screen and (min-height: 980px)
+  .container
+    width: 1200px
+    padding-left: 15px
+    padding-right: 15px
+
+.header__top
+  height: 27px
+  line-height: 27px
+  background-color: #f6f6f6
+
+.header__bottom
+  position: relative
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  -ms-flex-pack: center
+  justify-content: center
+
+.header__menu
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+
+.header__menu-list
+  position: relative
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  margin-top: 0
+  margin-bottom: 0
+  padding-left: 0
+  width: 100%
+  list-style-type: none
+
+.header__menu-list_left
+  -ms-flex-pack: justify
+  justify-content: space-between
+
+.header__menu-list_right
+  margin-top: 12px
+  -ms-flex-pack: distribute
+  justify-content: space-around
+
+.header__menu-item
+  font-size: 0.688rem
+  text-transform: uppercase
+
+.header__menu-item_drop:after
+  margin-left: 4px
+  +awesome-free
+  content: "\f107"
+
+.header__menu-item_login
+  position: absolute
+  top: 140px
+  width: 100%
+  text-align: center
+
+.header__menu-item_cart
+  position: absolute
+  top: 205px
+  right: 0
+
+.header__menu-link
+  display: inline-block
+  font-size: 0.688rem
+  font-weight: $font-weight
+  color: $primary-color
+  text-transform: uppercase
+  text-decoration: none
+
+.header__menu-link_cart-text
+  visibility: hidden
+
+.header__menu-link_cart-price
+  visibility: visible
+  font-family: 'Cousine', monospace
+  font-size: 1rem
+  color: $second-color
+
+.header__logo
+  margin-top: 70px
+
+.logo
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-align: center
+  align-items: center
+  text-decoration: none
+
+.logo__img
+  margin-right: 7px
+
+.logo__h2
+  margin-top: 0
+  margin-bottom: 0
+  font-size: 2.75rem
+  font-weight: 700
+  color: $second-color
+  text-transform: uppercase
+
+.btn
+  padding: 0
+  box-sizing: border-box
+  border: none
+  cursor: pointer
+
+.header__search-form
+  margin-top: 54px
+
+.search-form
+  display: -ms-flexbox
+  display: flex
+  box-sizing: border-box
+  width: 100%
+
+.search-form__input
+  width: 100%
+  padding: 11px 38px 11px 11px
+  border: 1px solid #e1e1e1
+  background-color: $inverse-color
+  font-size: 0.813rem
+
+.search-form__btn-submit:after
+  +awesome-free
+  content: "\f002"
+  margin-left: -38px
+  padding: 10px 11px
+  color: $primary-color
+
+.navigation
+  display: inline-block
+
+.header__navigation
+  margin-top: 24px
+
+.navigation__dropbox
+  visibility: visible
+  font-family: 'Cousine', monospace
+  font-size: 1rem
+  font-weight: 700
+  color: $second-color
+  line-height: 1rem
+  text-transform: uppercase
+  cursor: pointer
+
+.navigation__list
+  visibility: hidden
+  @extend .header__menu-list
+
+.slider
+  width: 320px
+  height: 178px
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-pack: center
+  justify-content: center
+  -ms-flex-align: center
+  align-items: center
+  background-color: #ccc
+
+.slider__container
+  display: none
+
+.slider__arrow
+  visibility: hidden
+
+.slider__text
+  position: relative
+  width: 300px
+  height: 140px
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-pack: center
+  justify-content: center
+  -ms-flex-align: center
+  align-items: center
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  border: 1px solid $inverse-color
+  color: $inverse-color
+  & > p
+    margin-top: 0
+    margin-bottom: 0
+    font-size: 0.875rem
+    line-height: 0.875rem
+    font-weight: 700
+    text-transform: uppercase
+
+.slider__text_h3
+  margin-top: 0
+  margin-bottom: 0
+  font-size: 2.125rem
+  line-height: 2.125rem
+  font-weight: 700
+  text-transform: uppercase
+
+.slider__text_h4
+  margin-top: 0
+  margin-bottom: 0
+  font-size: 1.05rem
+  line-height: 1.05rem
+  font-weight: 700
+  text-transform: uppercase
+
+.category__container
+  position: relative
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+  -ms-flex-direction: row
+  flex-direction: row
+  -ms-flex-pack: justify
+  justify-content: space-between
+  margin-top: 20px
+
+.category__block
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-pack: center
+  justify-content: center
+  -ms-flex-align: center
+  align-items: center
+  margin-bottom: 10px
+  font-size: 3rem
+  color: $inverse-color
+
+  &:last-child
+    margin-bottom: 0
+
+.category__block_first,
+.category__block_second,
+.category__block_third,
+.category__block_fourth,
+.category__block_fifth,
+.category__block_sixth
+  position: relative
+
+.category__block_first
+  width: 100%
+  height: 156px
+  flex-basis: 100%
+  background-color: #ccc
+
+.category__block_second
+  width: 100%
+  height: 537px
+  flex-basis: 100%
+  background-color: #ccc
+
+.category__block_third,
+.category__block_fourth,
+.category__block_sixth
+  width: 100%
+  height: 189px
+  flex-basis: 100%
+  background-color: #ccc
+
+.category__block_fifth
+  width: 100%
+  height: 401px
+  flex-basis: 100%
+  background-color: #ccc
+
+.products__category-list
+  position: relative
+  margin-top: 22px
+  margin-bottom: 20px
+  padding-left: 0
+  width: 100%
+  list-style-type: none
+  text-align: center
+
+.products__category-link
+  display: inline-block
+  padding-top: 9px
+  padding-bottom: 9px
+  color: $primary-color
+  font-size: 1rem
+  font-weight: 700
+  text-transform: uppercase
+  text-decoration: none
+
+.products__category-link_active
+  margin-bottom: 11px
+  color: $second-color
+  border-bottom: 2px solid $second-color
+
+.products__wrapper
+  max-height: 1340px
+  overflow: hidden
+
+.product
+  width: 100%
+  margin-bottom: 30px
+
+.product__img
+  width: 280px
+  height: 364px
+  background-color: #ccc
+
+.product__desc
+  margin-top: 15px
+  margin-bottom: 10px
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-pack: justify
+  justify-content: space-between
+  font-size: 0.813rem
+  & > p
+    max-width: 49%
+    margin-top: 0
+    margin-bottom: 0
+    line-height: 1.3rem
+
+.product__desc_highlight
+  color: $second-color
+  font-size: 0.938rem
+  font-weight: 700
+
+.products__show-more
+  height: 8px
+  margin-top: 20px
+  margin-bottom: 80px
+  text-align: center
+  border-bottom: 1px solid #ddd
+
+.products__show-more_link
+  display: inline-block
+  padding: 0 20px
+  color: $second-color
+  font-size: 0.875rem
+  font-weight: 700
+  text-transform: uppercase
+  text-decoration: none
+  background-color: $inverse-color
+
+.mosaic,
+.footer
+  background-color: #1f1f1f
+
+.mosaic__cell
+  padding: 30px 20px
+  border-bottom: 1px solid #2f2f2f
+
+.mosaic__cell_h3
+  width: 100%
+  margin-top: 0
+  margin-bottom: 20px
+  color: #b6b6b6
+  font-size: 1.063rem
+  font-weight: 400
+  text-transform: uppercase
+
+.img_120x120
+  display: inline-block
+  width: 120px
+  height: 120px
+  margin-right: 15px
+  margin-bottom: 15px
+  float: left
+  text-align: center
+  line-height: 120px
+  background-color: #ccc
+
+.img_280x205
+  width: 280px
+  height: 205px
+  text-align: center
+  line-height: 205px
+  background-color: #ccc
+
+.mosaic__cell_text
+  display: inline-block
+  max-width: 49%
+  margin-top: 0
+  margin-bottom: 0
+  font-size: 0.875rem
+
+.contact-form__input
+  width: 100%
+  box-sizing: border-box
+  margin-bottom: 10px
+  padding: 11px 12px
+  font-size: 0.75rem
+  font-weight: 400
+  color: $primary-color
+  border: 1px solid #ccc
+  background-color: #1f1f1f
+  &::placeholder
+    text-transform: uppercase
+
+.search-form__textarea
+  @extend .contact-form__input
+  height: 100px
+  resize: none
+
+.search-form__submit
+  border: none
+  color: $primary-color
+  font-size: 0.75rem
+  font-weight: 700
+  text-transform: uppercase
+  background-color: #1f1f1f
+
+.mosaic__cell-flex
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-pack: justify
+  justify-content: space-between
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+
+.img_130x160
+  display: inline-block
+  width: 130px
+  height: 160px
+  text-align: center
+  line-height: 160px
+  background-color: #ccc
+
+.img_60x60
+  display: inline-block
+  width: 60px
+  height: 60px
+  margin-bottom: 15px
+  font-size: 0.813rem
+  text-align: center
+  line-height: 60px
+  border: 6px solid #2f2f2f
+  background-color: #ccc
+
+.mosaic__list
+  margin-top: 10px
+  margin-bottom: 0
+  padding-left: 0
+  list-style-type: none
+
+.mosaic__item
+  line-height: 2rem
+
+.mosaic__link
+  color: $primary-color
+  font-size: 0.875rem
+  font-weight: 400
+  text-decoration: none
+
+.footer
+  padding-top: 40px
+  padding-bottom: 40px
+
+.footer__box
+  padding-top: 10px
+  padding-bottom: 10px
+
+.cards__img
+  border: 1px solid #565656
+  margin-right: 2px
+
+.footer__socials
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+
+.social__btn
+  width: 40px
+  height: 40px
+  box-sizing: border-box
+  margin-right: 5px
+  margin-bottom: 7px
+  text-align: center
+  line-height: 35px
+  border: 3px solid $primary-color
+
+.footer__copy
+  font-family: Arial
+  font-size: 0.75rem
+
+.footer__top-arrow
+  box-sizing: border-box
+  width: 45px
+  height: 45px
+  margin-top: 10px
+  font-size: 1.5rem
+  text-align: center
+  border: 1.5px solid $primary-color
+  border-radius: 50%
+
+.top-arrow-link
+  color: $primary-color
+  text-decoration: none
