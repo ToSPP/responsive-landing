@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Responsive Landing Page</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="header">
+    <div class="header__top">
+        <div class="container">
+            <ul class="header__menu-list">
+                <li class="header__menu-item">
+                    <a href="#" class="header__menu-link">My Account</a></li>
+                <li class="header__menu-item">
+                    <a href="#" class="header__menu-link">MY Wishlist (<span data-wishlist="0">0</span>)</a></li>
+                <li class="header__menu-item">
+                    <a href="#" class="header__menu-link">Checkout</a></li>
+                <li class="header__menu-item">
+                    <a href="#" class="header__menu-link">Log In</a> or <a href="#" class="footer__menu-link">register</a></li>
+                <li class="header__menu-item">
+                    <a href="#" class="header__menu-link">US Dollar</a></li>
+                <li class="header__menu-item">
+                    <a href="#" class="header__menu-link">English</a></li>
+                <li class="header__menu-item">
+                    <a href="#" class="header__menu-link">My Bag: <span data-my-bag="0">0</span> item(s)</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="header__bottom">
+        <a href="index.html" class="logo">
+            <h2 class="logo__h2">FENGO</h2></a>
+        <form action="#" class="search-form">
+            <input type="text" class="search-form__input">
+            <input type="submit" class="search-form__submit">
+        </form>
+        <ul class="navigation">
+            <li class="navigation__item"><a href="#" class="navigation__link">Fashion</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">Electronics</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">Gifts</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">Books</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">At Home</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">Music</a></li>
+            <li class="navigation__item"><a href="#" class="navigation__link">Sale</a></li>
+        </ul>
+    </div>
+</header>
+<section class="slider">
+    <button type="button" class="slider__arrow"><i class="fas fa-angle-left"></i></button>
+    <div class="container">
+        <div class="slider__text"></div>
+        <div class="slider__toggle">
+            <a href="#" class="slider__btn"></a>
+            <a href="#" class="slider__btn"></a>
+            <a href="#" class="slider__btn"></a>
+        </div>
+    </div>
+    <button type="button" class="slider__arrow"><i class="fas fa-angle-right"></i></button>
+</section>
+<section class="category">
+    <div class="container">
+        <div class="category__block category__block_first">1</div>
+        <div class="category__block category__block_second">2</div>
+        <div class="category__block category__block_third">3</div>
+        <div class="category__block category__block_fourth">4</div>
+        <div class="category__block category__block_fifth">5</div>
+        <div class="category__block category__block_sixth">6</div>
+    </div>
+</section>
+<section class="products">
+    <div class="container">
+        <ul class="products__category-list">
+            <li class="products__category-item"><a href="#" class="products__category-link"></a></li>
+            <li class="products__category-item"><a href="#" class="products__category-link"></a></li>
+            <li class="products__category-item"><a href="#" class="products__category-link"></a></li>
+            <li class="products__category-item"><a href="#" class="products__category-link"></a></li>
+        </ul>
+        <div class="products__wrapper">
+            <div class="products__item"></div>
+            <div class="products__item"></div>
+            <div class="products__item"></div>
+            <div class="products__item"></div>
+            <div class="products__item"></div>
+            <div class="products__item"></div>
+            <div class="products__item"></div>
+            <div class="products__item"></div>
+        </div>
+        <div class="products__show-more">
+            <a href="#" class="products__show-more_link">Show More</a>
+        </div>
+    </div>
+</section>
+<section class="mosaic">
+    <div class="mosaic__col mosaic__col_left">
+        <div class="mosaic__cell mosaic__cell_left"></div>
+        <div class="mosaic__cell mosaic__cell_left"></div>
+        <div class="mosaic__cell mosaic__cell_left"></div>
+    </div>
+    <div class="mosaic__col mosaic__col_center">
+        <div class="mosaic__cell"></div>
+        <div class="mosaic__cell"></div>
+    </div>
+    <div class="mosaic__col mosaic__col_right">
+        <div class="mosaic__cell mosaic__cell_right"></div>
+        <div class="mosaic__cell mosaic__cell_right"></div>
+        <div class="mosaic__cell mosaic__cell_right"></div>
+    </div>
+</section>
+<footer class="footer">
+    <div class="container">
+        <div class="footer__box footer__cards"></div>
+        <div class="footer__box footer__socials"></div>
+        <div class="footer__box footer__copy"></div>
+        <div class="footer__box footer__top-arrow"></div>
+    </div>
+</footer>
+</body>
+</html>
