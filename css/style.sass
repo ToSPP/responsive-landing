@@ -10,8 +10,8 @@ html
 
 body
   width: 100%
+  display: -ms-flexbox
   display: flex
-  -webkit-flex-direction: column
   -ms-flex-direction: column
   flex-direction: column
 
@@ -22,17 +22,19 @@ body
   padding-left: 20px
   padding-right: 20px
 
-@media screen and (min-height: 320px)
+@media screen and (min-width: 768px)
   .container
     width: 724px
     padding-left: 22px
     padding-right: 22px
 
-@media screen and (min-height: 768px)
+@media screen and (min-width: 980px)
   .container
     width: 940px
+    padding-left: 20px
+    padding-right: 20px
 
-@media screen and (min-height: 980px)
+@media screen and (min-width: 1200px)
   .container
     width: 1200px
     padding-left: 15px
@@ -52,11 +54,37 @@ body
   -ms-flex-pack: center
   justify-content: center
 
+@media screen and (min-width: 768px)
+  .header__bottom
+    margin-top: 34px
+    -ms-flex-pack: justify
+    justify-content: space-between
+    -ms-flex-align: center
+    align-items: center
+
+@media screen and (min-width: 980px)
+  .header__bottom
+    margin-top: 16px
+
 .header__menu
   display: -ms-flexbox
   display: flex
   -ms-flex-wrap: wrap
   flex-wrap: wrap
+
+@media screen and (min-width: 768px)
+  .header__menu
+    -ms-flex-wrap: nowrap
+    flex-wrap: nowrap
+    -ms-flex-pack: justify
+    justify-content: space-between
+
+  .header__menu-item_reg-hide
+    display: none
+
+@media screen and (min-width: 980px)
+  .header__menu-item_reg-hide
+    display: inline
 
 .header__menu-list
   position: relative
@@ -70,14 +98,42 @@ body
   width: 100%
   list-style-type: none
 
+@media screen and (min-width: 768px)
+  .header__menu-list
+    -ms-flex-wrap: nowrap
+    flex-wrap: nowrap
+
 .header__menu-list_left
   -ms-flex-pack: justify
   justify-content: space-between
+
+@media screen and (min-width: 768px)
+  .header__menu-list_left
+    width: 50%
+
+@media screen and (min-width: 1200px)
+  .header__menu-list_left
+    width: 40%
 
 .header__menu-list_right
   margin-top: 12px
   -ms-flex-pack: distribute
   justify-content: space-around
+
+@media screen and (min-width: 768px)
+  .header__menu-list_right
+    margin-top: 0
+    -ms-flex-pack: justify
+    justify-content: space-between
+    width: 40%
+
+@media screen and (min-width: 980px)
+  .header__menu-list_right
+    width: 33%
+
+@media screen and (min-width: 1200px)
+  .header__menu-list_right
+    width: 25%
 
 .header__menu-item
   font-size: 0.688rem
@@ -94,10 +150,21 @@ body
   width: 100%
   text-align: center
 
+@media screen and (min-width: 768px)
+  .header__menu-item_login
+    position: relative
+    top: 0
+    width: auto
+
 .header__menu-item_cart
   position: absolute
   top: 205px
   right: 0
+
+@media screen and (min-width: 768px)
+  .header__menu-item_cart
+    position: relative
+    top: 0
 
 .header__menu-link
   display: inline-block
@@ -108,16 +175,31 @@ body
   text-decoration: none
 
 .header__menu-link_cart-text
-  visibility: hidden
+  display: none
+
+@media screen and (min-width: 768px)
+  .header__menu-link_cart-text
+    display: block
 
 .header__menu-link_cart-price
-  visibility: visible
   font-family: 'Cousine', monospace
   font-size: 1rem
   color: $second-color
 
+@media screen and (min-width: 768px)
+  .header__menu-link_cart-price
+    display: none
+
 .header__logo
   margin-top: 70px
+
+@media screen and (min-width: 768px)
+  .header__logo
+    margin-top: 0
+
+@media screen and (min-width: 980px)
+  .header__logo
+    order: 1
 
 .logo
   display: -ms-flexbox
@@ -146,11 +228,29 @@ body
 .header__search-form
   margin-top: 54px
 
+@media screen and (min-width: 768px)
+  .header__search-form
+    margin-top: 0
+
+@media screen and (min-width: 980px)
+  .header__search-form
+    order: 0
+    -ms-flex-pack: end
+    justify-content: flex-end
+
 .search-form
   display: -ms-flexbox
   display: flex
   box-sizing: border-box
   width: 100%
+
+@media screen and (min-width: 768px)
+  .search-form
+    width: 260px
+
+@media screen and (min-width: 980px)
+  .search-form
+    width: 100%
 
 .search-form__input
   width: 100%
@@ -159,21 +259,53 @@ body
   background-color: $inverse-color
   font-size: 0.813rem
 
+@media screen and (min-width: 768px)
+  .search-form__input
+    padding-top: 8px
+    padding-bottom: 8px
+
+@media screen and (min-width: 980px)
+  .search-form__input
+    width: 260px
+
 .search-form__btn-submit:after
   +awesome-free
   content: "\f002"
   margin-left: -38px
   padding: 10px 11px
+  font-size: 0.813rem
   color: $primary-color
+
+@media screen and (min-width: 768px)
+  .search-form__btn-submit:after
+    padding-top: 10px
+    padding-bottom: 7px
 
 .navigation
   display: inline-block
 
+@media screen and (min-width: 768px)
+  .navigation
+    display: block
+    width: 100%
+
+@media screen and (min-width: 980px)
+  .navigation
+    width: auto
+
 .header__navigation
   margin-top: 24px
 
+@media screen and (min-width: 768px)
+  .header__navigation
+    margin-top: 29px
+    margin-bottom: 12px
+
+@media screen and (min-width: 980px)
+  .header__navigation
+    order: 1
+
 .navigation__dropbox
-  visibility: visible
   font-family: 'Cousine', monospace
   font-size: 1rem
   font-weight: 700
@@ -182,13 +314,44 @@ body
   text-transform: uppercase
   cursor: pointer
 
+@media screen and (min-width: 768px)
+  .navigation__dropbox
+    display: none
+
 .navigation__list
   visibility: hidden
   @extend .header__menu-list
 
+@media screen and (min-width: 768px)
+  .navigation__list
+    visibility: visible
+    -ms-flex-pack: justify
+    justify-content: space-between
+
+    .navigation__link
+      display: block
+      padding-top: 5px
+      padding-bottom: 5px
+      color: $primary-color
+      font-size: 0.875rem
+      font-weight: 700
+      text-transform: uppercase
+      text-decoration: none
+
+@media screen and (min-width: 980px)
+  .navigation__item
+    margin-left: 20px
+    margin-right: 20px
+    &:first-child
+      margin-left: 0
+    &:last-child
+      margin-right: 0
+
 .slider
-  width: 320px
+  width: 100%
   height: 178px
+  margin-left: auto
+  margin-right: auto
   display: -ms-flexbox
   display: flex
   -ms-flex-pack: center
@@ -197,13 +360,60 @@ body
   align-items: center
   background-color: #ccc
 
+@media screen and (min-width: 768px)
+  .slider
+    height: 428px
+    -ms-flex-pack: justify
+    justify-content: space-between
+
+  .slider__arrow-left
+    margin-left: 22px
+
+  .slider__arrow-right
+    margin-right: 22px
+
+@media screen and (min-width: 1200px)
+  .slider
+    height: 700px
+
 .slider__container
   display: none
+
+@media screen and (min-width: 768px)
+  .slider__container
+    display: block
+    width: 625px
 
 .slider__arrow
   visibility: hidden
 
-.slider__text
+@media screen and (min-width: 768px)
+  .slider__arrow
+    visibility: visible
+    width: 48px
+    height: 48px
+    color: $inverse-color
+    font-size: 1.5rem
+    border: 0.188rem solid $inverse-color
+    border-radius: 50%
+    background-color: transparent
+
+.slider__text-big > p
+  color: $second-color
+  font-size: 0.875rem
+  font-weight: 700
+  text-transform: uppercase
+
+@media screen and (min-width: 768px)
+  .slider__text-big
+    width: 60%
+    margin-left: auto
+
+@media screen and (min-width: 980px)
+  .slider__text-big
+    width: 50%
+
+.slider__text-small
   position: relative
   width: 300px
   height: 140px
@@ -225,6 +435,10 @@ body
     font-weight: 700
     text-transform: uppercase
 
+@media screen and (min-width: 768px)
+  .slider__text-small
+    display: none
+
 .slider__text_h3
   margin-top: 0
   margin-bottom: 0
@@ -233,6 +447,15 @@ body
   font-weight: 700
   text-transform: uppercase
 
+@media screen and (min-width: 768px)
+  .slider__text_h3
+    text-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.05)
+    color: $inverse-color
+    font-size: 4.688rem
+    font-weight: 700
+    line-height: 3.75rem
+    text-transform: uppercase
+
 .slider__text_h4
   margin-top: 0
   margin-bottom: 0
@@ -240,6 +463,19 @@ body
   line-height: 1.05rem
   font-weight: 700
   text-transform: uppercase
+
+@media screen and (min-width: 768px)
+  .slider__text_h4
+    margin-top: 14px
+    color: $second-color
+    font-size: 1.625rem
+    font-weight: 700
+    line-height: 1.5rem
+    text-transform: uppercase
+
+@media screen and (min-width: 768px)
+  .category
+    background-color: #f3f3f3
 
 .category__container
   position: relative
@@ -253,6 +489,24 @@ body
   justify-content: space-between
   margin-top: 20px
 
+@media screen and (min-width: 768px)
+  .category__container
+    height: 634px
+    margin-top: 30px
+    margin-bottom: 10px
+    -ms-flex-direction: column
+    flex-direction: column
+
+@media screen and (min-width: 980px)
+  .category__container
+    height: 812px
+
+@media screen and (min-width: 1200px)
+  .category__container
+    height: 1020px
+    margin-top: 60px
+    margin-bottom: 40px
+
 .category__block
   display: -ms-flexbox
   display: flex
@@ -263,9 +517,20 @@ body
   margin-bottom: 10px
   font-size: 3rem
   color: $inverse-color
-
   &:last-child
     margin-bottom: 0
+
+@media screen and (min-width: 768px)
+  .category__block
+    margin-bottom: 20px
+    &:last-child
+      margin-bottom: 20px
+
+@media screen and (min-width: 1200px)
+  .category__block
+    margin-bottom: 30px
+    &:last-child
+      margin-bottom: 30px
 
 .category__block_first,
 .category__block_second,
@@ -281,11 +546,52 @@ body
   flex-basis: 100%
   background-color: #ccc
 
+@media screen and (min-width: 768px)
+  .category__block_first
+    order: 1
+    width: 476px
+    height: 266px
+    flex-basis: 266px
+
+@media screen and (min-width: 980px)
+  .category__block_first
+    width: 620px
+    height: 346px
+    flex-basis: 346px
+
+@media screen and (min-width: 1200px)
+  .category__block_first
+    width: 770px
+    height: 430px
+    flex-basis: 430px
+
 .category__block_second
   width: 100%
   height: 537px
   flex-basis: 100%
   background-color: #ccc
+
+@media screen and (min-width: 768px)
+  .category__block_second
+    right: 208px
+    width: 228px
+    height: 432px
+    order: 5
+    flex-basis: 432px
+
+@media screen and (min-width: 980px)
+  .category__block_second
+    right: 280px
+    width: 300px
+    height: 569px
+    flex-basis: 569px
+
+@media screen and (min-width: 1200px)
+  .category__block_second
+    right: 340px
+    width: 370px
+    height: 710px
+    flex-basis: 710px
 
 .category__block_third,
 .category__block_fourth,
@@ -295,11 +601,82 @@ body
   flex-basis: 100%
   background-color: #ccc
 
+@media screen and (min-width: 768px)
+  .category__block_third
+    width: 228px
+    height: 154px
+    order: 2
+    flex-basis: 154px
+
+  .category__block_fourth
+    width: 228px
+    height: 154px
+    order: 3
+    flex-basis: 154px
+
+  .category__block_sixth
+    width: 228px
+    height: 162px
+    order: 6
+    right: 208px
+    flex-basis: 162px
+
+@media screen and (min-width: 980px)
+  .category__block_third,
+  .category__block_fourth
+    width: 300px
+    height: 203px
+    flex-basis: 203px
+
+  .category__block_sixth
+    width: 300px
+    height: 203px
+    right: 280px
+    flex-basis: 203px
+
+@media screen and (min-width: 1200px)
+  .category__block_third,
+  .category__block_fourth
+    width: 370px
+    height: 250px
+    flex-basis: 250px
+
+  .category__block_sixth
+    width: 370px
+    height: 250px
+    right: 340px
+    flex-basis: 250px
+
 .category__block_fifth
   width: 100%
   height: 401px
   flex-basis: 100%
   background-color: #ccc
+
+@media screen and (min-width: 768px)
+  .category__block_fifth
+    width: 228px
+    height: 328px
+    order: 4
+    top: 286px
+    right: 228px
+    flex-basis: 328px
+
+@media screen and (min-width: 980px)
+  .category__block_fifth
+    width: 300px
+    height: 426px
+    top: 366px
+    right: 300px
+    flex-basis: 426px
+
+@media screen and (min-width: 1200px)
+  .category__block_fifth
+    width: 370px
+    height: 530px
+    top: 460px
+    right: 370px
+    flex-basis: 530px
 
 .products__category-list
   position: relative
@@ -309,6 +686,22 @@ body
   width: 100%
   list-style-type: none
   text-align: center
+
+@media screen and (min-width: 768px)
+  .products__category-list
+    margin-top: 50px
+    margin-left: 25px
+    margin-right: 25px
+    width: auto
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-pack: distribute
+    justify-content: space-around
+
+@media screen and (min-width: 980px)
+  .products__category-list
+    margin-left: 15%
+    margin-right: 15%
 
 .products__category-link
   display: inline-block
@@ -329,14 +722,59 @@ body
   max-height: 1340px
   overflow: hidden
 
+@media screen and (min-width: 768px)
+  .products__wrapper
+    max-height: 782px
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-pack: justify
+    justify-content: space-between
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+
+@media screen and (min-width: 980px)
+  .products__wrapper
+    max-height: 970px
+
+@media screen and (min-width: 1200px)
+  .products__wrapper
+    max-height: 100%
+
 .product
   width: 100%
   margin-bottom: 30px
+
+@media screen and (min-width: 768px)
+  .product
+    width: 228px
+
+@media screen and (min-width: 980px)
+  .product
+    width: 300px
+
+@media screen and (min-width: 1200px)
+  .product
+    width: 270px
 
 .product__img
   width: 280px
   height: 364px
   background-color: #ccc
+
+@media screen and (min-width: 768px)
+  .product__img
+    width: 228px
+    height: 296px
+
+@media screen and (min-width: 980px)
+  .product__img
+    width: 300px
+    height: 390px
+
+@media screen and (min-width: 1200px)
+  .product__img
+    width: 270px
+    height: 350px
 
 .product__desc
   margin-top: 15px
@@ -364,6 +802,10 @@ body
   text-align: center
   border-bottom: 1px solid #ddd
 
+@media screen and (min-width: 768px)
+  .products__show-more
+    margin-bottom: 100px
+
 .products__show-more_link
   display: inline-block
   padding: 0 20px
@@ -378,9 +820,107 @@ body
 .footer
   background-color: #1f1f1f
 
+@media screen and (min-width: 768px)
+  .mosaic
+    width: 100%
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-pack: center
+    justify-content: center
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+    overflow: hidden
+    border-bottom: 1px solid #3f3f3f
+
+.mosaic__col
+  box-sizing: border-box
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-direction: column
+  flex-direction: column
+  -ms-flex-pack: justify
+  justify-content: space-between
+
+@media screen and (min-width: 768px)
+  .mosaic__col
+    padding-top: 30px
+    padding-bottom: 10px
+    -ms-flex-pack: start
+    justify-content: flex-start
+
 .mosaic__cell
+  border-bottom: 1px solid #3f3f3f
+
+@media screen and (min-width: 768px)
+  .mosaic__cell:last-child
+    border-bottom: none
+
+.mosaic__cell_wrap
+  margin: 0 auto
+  box-sizing: border-box
+  max-width: 320px
   padding: 30px 20px
-  border-bottom: 1px solid #2f2f2f
+
+@media screen and (min-width: 768px)
+  .mosaic__cell_wrap
+    padding-left: 15px
+    padding-right: 15px
+
+@media screen and (min-width: 980px)
+  .mosaic__cell_wrap
+    max-width: 400px
+
+@media screen and (min-width: 1200px)
+  .mosaic__cell_wrap
+    max-width: 500px
+
+@media screen and (min-width: 768px)
+  .mosaic__col_left
+    -ms-flex-align: end
+    align-items: flex-end
+    border-right: 1px solid #3f3f3f
+
+  .mosaic__col_center
+    width: 248px
+    -ms-flex-align: center
+    align-items: center
+
+  .mosaic__col_right
+    -ms-flex-align: start
+    align-items: flex-start
+    border-left: 1px solid #3f3f3f
+
+  .mosaic__cell_left
+    width: 310px
+    padding-left: 300%
+
+  .mosaic__cell_right
+    width: 201px
+    padding-right: 300%
+
+@media screen and (min-width: 980px)
+  .mosaic__col_center
+    width: 320px
+
+  .mosaic__cell_left
+    width: 400px
+    padding-left: 100%
+
+  .mosaic__cell_right
+    width: 235px
+    padding-right: 100%
+
+@media screen and (min-width: 1200px)
+  .mosaic__col_center
+    width: 400px
+
+  .mosaic__cell_left
+    width: 500px
+    padding-left: 50%
+
+  .mosaic__cell_right
+    width: 295px
+    padding-right: 50%
 
 .mosaic__cell_h3
   width: 100%
@@ -390,6 +930,10 @@ body
   font-size: 1.063rem
   font-weight: 400
   text-transform: uppercase
+
+@media screen and (min-width: 768px)
+  .mosaic__cell_h3
+    font-size: 1rem
 
 .img_120x120
   display: inline-block
@@ -402,12 +946,50 @@ body
   line-height: 120px
   background-color: #ccc
 
+.mosaic__cell_prod-sm
+  display: -ms-flexbox
+  display: flex
+  -ms-flex-pack: justify
+  justify-content: space-between
+  -ms-flex-wrap: wrap
+  flex-wrap: wrap
+
+.mosaic__cell_prod-xl
+  display: none
+
+@media screen and (min-width: 768px) and (max-width: 979px)
+  .mosaic__cell_prod-sm
+    display: none
+
+  .mosaic__cell_prod-xl
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-pack: justify
+    justify-content: space-between
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+
+.img_218x285
+  width: 218px
+  height: 285px
+  text-align: center
+  line-height: 285px
+  background-color: #ccc
+
 .img_280x205
   width: 280px
   height: 205px
   text-align: center
   line-height: 205px
   background-color: #ccc
+
+@media screen and (min-width: 980px)
+  .img_280x205
+    width: 370px
+
+@media screen and (min-width: 1200px)
+  .img_280x205
+    width: 450px
 
 .mosaic__cell_text
   display: inline-block
@@ -429,12 +1011,27 @@ body
   &::placeholder
     text-transform: uppercase
 
-.search-form__textarea
+@media screen and (min-width: 768px)
+  .contact-form__input,
+  .contact-form__textarea
+    width: 280px
+
+@media screen and (min-width: 980px)
+  .contact-form__input,
+  .contact-form__textarea
+    width: 370px
+
+@media screen and (min-width: 1200px)
+  .contact-form__input,
+  .contact-form__textarea
+    width: 450px
+
+.contact-form__textarea
   @extend .contact-form__input
   height: 100px
   resize: none
 
-.search-form__submit
+.contact-form__submit
   border: none
   color: $primary-color
   font-size: 0.75rem
@@ -458,6 +1055,10 @@ body
   line-height: 160px
   background-color: #ccc
 
+.facebook_wrap
+  height: 150px
+  overflow: hidden
+
 .img_60x60
   display: inline-block
   width: 60px
@@ -468,6 +1069,15 @@ body
   line-height: 60px
   border: 6px solid #2f2f2f
   background-color: #ccc
+
+@media screen and (min-width: 768px)
+  .img_60x60
+    border: 3px solid #2f2f2f
+
+@media screen and (min-width: 980px)
+  .img_60x60
+    margin-right: 5px
+    border: 5px solid #2f2f2f
 
 .mosaic__list
   margin-top: 10px
@@ -488,6 +1098,23 @@ body
   padding-top: 40px
   padding-bottom: 40px
 
+@media screen and (min-width: 768px)
+  .footer
+    padding-bottom: 48px
+
+  .footer__container
+    position: relative
+    display: -ms-flexbox
+    display: flex
+    -ms-flex-pack: justify
+    justify-content: space-between
+    -ms-flex-wrap: wrap
+    flex-wrap: wrap
+
+@media screen and (min-width: 980px)
+  .footer
+    padding-bottom: 0
+
 .footer__box
   padding-top: 10px
   padding-bottom: 10px
@@ -502,6 +1129,20 @@ body
   -ms-flex-wrap: wrap
   flex-wrap: wrap
 
+@media screen and (min-width: 980px)
+  .footer__socials
+    margin-left: auto
+    margin-right: 65px
+
+@media screen and (min-width: 1200px)
+  .footer__socials
+    margin-left: 40%
+    margin-right: 65px
+
+@media screen and (min-width: 1320px)
+  .footer__socials
+    margin-right: 0
+
 .social__btn
   width: 40px
   height: 40px
@@ -511,10 +1152,23 @@ body
   text-align: center
   line-height: 35px
   border: 3px solid $primary-color
+  &:last-child
+    margin-right: 0
 
 .footer__copy
-  font-family: Arial
+  font-family: Arial, sans-serif
   font-size: 0.75rem
+
+@media screen and (min-width: 768px)
+  .footer__copy
+    position: relative
+    top: -35px
+    font-size: 0.688rem
+
+@media screen and (min-width: 980px)
+  .footer__copy
+    font-size: 0.75rem
+    order: 2
 
 .footer__top-arrow
   box-sizing: border-box
@@ -525,6 +1179,24 @@ body
   text-align: center
   border: 1.5px solid $primary-color
   border-radius: 50%
+
+@media screen and (min-width: 768px)
+  .footer__top-arrow
+    position: fixed
+    bottom: 50px
+    left: 48%
+    z-index: 10
+    margin-top: 0
+    opacity: 0.6
+
+@media screen and (min-width: 980px)
+  .footer__top-arrow
+    left: auto
+    right: 20px
+
+@media screen and (min-width: 1200px)
+  .footer__top-arrow
+    opacity: 1
 
 .top-arrow-link
   color: $primary-color
