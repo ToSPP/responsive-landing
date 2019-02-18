@@ -36,7 +36,7 @@ body
 
 @media screen and (min-width: 1200px)
   .container
-    width: 1200px
+    width: 1170px
     padding-left: 15px
     padding-right: 15px
 
@@ -827,9 +827,6 @@ body
     display: flex
     -ms-flex-pack: center
     justify-content: center
-    -ms-flex-wrap: wrap
-    flex-wrap: wrap
-    overflow: hidden
     border-bottom: 1px solid #3f3f3f
 
 .mosaic__col
@@ -849,35 +846,27 @@ body
     justify-content: flex-start
 
 .mosaic__cell
+  padding: 30px 20px
   border-bottom: 1px solid #3f3f3f
+
+@media screen and (min-width: 768px)
+  .mosaic__cell
+    padding-left: 15px
+    padding-right: 15px
 
 @media screen and (min-width: 768px)
   .mosaic__cell:last-child
     border-bottom: none
 
-.mosaic__cell_wrap
-  margin: 0 auto
-  box-sizing: border-box
-  max-width: 320px
-  padding: 30px 20px
-
-@media screen and (min-width: 768px)
+@media screen and (max-width: 767px)
   .mosaic__cell_wrap
-    padding-left: 15px
-    padding-right: 15px
-
-@media screen and (min-width: 980px)
-  .mosaic__cell_wrap
-    max-width: 400px
-
-@media screen and (min-width: 1200px)
-  .mosaic__cell_wrap
-    max-width: 500px
+    width: 280px
+    margin-left: auto
+    margin-right: auto
 
 @media screen and (min-width: 768px)
   .mosaic__col_left
-    -ms-flex-align: end
-    align-items: flex-end
+    width: 50%
     border-right: 1px solid #3f3f3f
 
   .mosaic__col_center
@@ -886,41 +875,41 @@ body
     align-items: center
 
   .mosaic__col_right
-    -ms-flex-align: start
-    align-items: flex-start
+    width: 30%
     border-left: 1px solid #3f3f3f
 
   .mosaic__cell_left
-    width: 310px
-    padding-left: 300%
+    width: 280px
+    margin-left: auto
 
   .mosaic__cell_right
-    width: 201px
-    padding-right: 300%
+    width: 172px
 
 @media screen and (min-width: 980px)
   .mosaic__col_center
     width: 320px
 
+  .mosaic__cell_center
+    width: 290px
+
   .mosaic__cell_left
-    width: 400px
-    padding-left: 100%
+    width: 370px
 
   .mosaic__cell_right
-    width: 235px
-    padding-right: 100%
+    width: 205px
 
 @media screen and (min-width: 1200px)
   .mosaic__col_center
     width: 400px
 
+  .mosaic__cell_center
+    width: 370px
+
   .mosaic__cell_left
-    width: 500px
-    padding-left: 50%
+    width: 450px
 
   .mosaic__cell_right
-    width: 295px
-    padding-right: 50%
+    width: 285px
 
 .mosaic__cell_h3
   width: 100%
