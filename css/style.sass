@@ -2,6 +2,7 @@
 @import "mixins"
 
 html
+  height: 100%
   font-family: $font-family
   font-size: $font-size
   font-weight: $font-weight
@@ -10,10 +11,13 @@ html
 
 body
   width: 100%
+  min-height: 100%
   display: -ms-flexbox
   display: flex
   -ms-flex-direction: column
   flex-direction: column
+  -ms-flex-pack: justify
+  justify-content: space-between
 
 .container
   width: 280px

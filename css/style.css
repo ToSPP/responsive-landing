@@ -1,5 +1,6 @@
 @charset "UTF-8";
 html {
+  height: 100%;
   font-family: "Merriweather Sans", sans-serif, Serif;
   font-size: 16px;
   font-weight: 400;
@@ -8,10 +9,13 @@ html {
 
 body {
   width: 100%;
+  min-height: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
-  flex-direction: column; }
+  flex-direction: column;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
 
 .container {
   width: 280px;
